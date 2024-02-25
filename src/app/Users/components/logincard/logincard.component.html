@@ -1,0 +1,51 @@
+<div class="w-[100vw] h-[100vh] z-50"><img class="w-full h-full" src="assets/images/bg-bib.jpg" alt=""></div>
+<div *ngIf="isCardVisible" class="background-overlay"></div>
+<div *ngIf="loading" class="w-[100vw] h-[100vh] top-0 left-0 absolute z-[100000000000] flex justify-center items-center p-0 m-0">
+    <div
+        class="inline-block h-8 w-8 animate-spin rounded-full !border-y-[#FF5C00] !border-l-[#FF5C00] border-4 border-solid border-current border-r-transparent align-[-0.125em] text-warning motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+        <span
+            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Loading...</span
+        >
+    </div>
+</div>
+<div *ngIf="isCardVisible" class="content">
+    <div class="header gap-2">
+        <img class="h-[60px] w-[146px]" src="assets/images/PDLlab.png" alt="PDLlab_logo">
+        <span class="text-[2vw]">Bon retour !</span>
+        <div class="socialmedia">
+            <div><img src="assets/images/google.png" alt="google_logo"></div>
+            <div><img src="assets/images/facebook.png" alt="facebook_logo"></div>
+        </div>
+        <div class="min-w-[300px]">
+            <hr>
+            <p class="!text-[2vw]"> OR </p>
+            <hr>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <span *ngIf="Errorconnection" class="text-red-600 text-center w-full">Verifier vos information et reesayer!</span>
+        <div class="form">
+            <mat-form-field>
+                <mat-label>adresse mail</mat-label>
+                <input matInput placeholder="mail@example.com"  formControlName="login" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>mot de passe</mat-label>
+                <input matInput required formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a href="#">mot de passe oublier ?</a>
+        </div>
+        <button mat-raised-button type="submit">Connexion</button>
+    </form>
+    <div class="flex align-center text-center text-[10px] md:text-[1.2vw] mt-[1.5vw]" style="font-family: 'Times New Roman', serif;">
+        <p>
+            vous n’avez pas de compte? <br>
+            <a routerLink="/signup" class="link-color cursor-pointer">créer un compte ici</a>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+.card-container {
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease-out;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+  
+  .card-content {
+    position: relative;
+  }
+  
+  .card-image {
+    width: 100%;
+    padding: 5pzx;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .card-details {
+    padding: 16px;
+  }
+  
+  .card-title {
+    color: #000;
+    font-family: Times New Roman;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .card-author {
+    color: #A19A9A;
+    font-family: Perpetua Titling MT;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .card-buttons-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.616);
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .card-container:hover .card-buttons-container {
+    opacity: 1;
+  }
+  
+  .round-button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+  }
+  
+  .round-button:hover {
+    background-color: #414141d5;
+    color: white;
+  }

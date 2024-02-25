@@ -1,0 +1,63 @@
+<div class="w-[100vw] h-[100vh] z-50"><img class="w-full h-full" src="assets/images/bg-signup.jpg" alt=""></div>
+<div *ngIf="isCardVisible" class="background-overlay"></div>
+<div *ngIf="loading" class="w-[100vw] h-[100vh] absolute z-[100000000000] flex justify-center items-center p-0 m-0">
+    <div
+        class="inline-block h-8 w-8 animate-spin rounded-full !border-y-[#FF5C00] !border-l-[#FF5C00] border-4 border-solid border-current border-r-transparent align-[-0.125em] text-warning motion-reduce:animate-[spin_1.5s_linear_infinite]"
+        role="status">
+        <span
+            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+            >Loading...</span
+        >
+    </div>
+</div>
+<div *ngIf="isCardVisible" class="content">
+    <div class="header">
+        <img class="h-[60px] w-[146px]" src="assets/images/PDLlab.png" alt="PDLlab_logo">
+        <span class="text-[2vw]">Bienvenue sur PDLlab</span>
+        <div class="socialmedia">
+            <div><img src="assets/images/google.png" alt="google_logo"></div>
+            <div><img src="assets/images/facebook.png" alt="facebook_logo"></div>
+        </div>
+        <div class="min-w-[300px]">
+            <hr>
+            <p class="!text-[2vw]"> OR </p>
+            <hr>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form">
+            <div class="flex gap-2">
+                <mat-form-field>
+                    <mat-label>nom</mat-label>
+                    <input matInput placeholder="nom" formControlName="nom" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>prenon</mat-label>
+                    <input matInput placeholder="prenom" formControlName="login" required>
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>adresse mail</mat-label>
+                <input matInput placeholder="mail@example.com" formControlName="email" required>
+                <!-- @if (email.invalid) {
+                    <mat-error>{{getErrorMessage()}}</mat-error>
+                } -->
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>mot de passe</mat-label>
+                <input matInput required formControlName="passWord" [type]="hide ? 'password' : 'text'">
+                <input value="" formControlName="photo" type="hidden">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit">Inscription</button>
+    </form>
+    <div class="flex align-center text-center  text-[10px] md:text-[1.2vw] mt-[1.5vw]" style="font-family: 'Times New Roman', serif;">
+        <p>
+            vous avez deja compte? <br>
+            <a routerLink="/login" class="link-color cursor-pointer">connectez ici</a>
+        </p>
+    </div>
+</div>

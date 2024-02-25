@@ -1,0 +1,92 @@
+.container_hero{
+    height: calc(100vh - 75px);
+    background-image: url("/assets/images/bg_hero.png");
+    background-repeat: no-repeat;
+    background-position-y : center;
+    background-size: cover;
+    div{
+        top: 113px;
+        left: 136px;
+        width: 554px;
+        gap: 15px;
+        strong{
+            height: 184px;
+            line-height: 1.5;
+            color: #000;
+            font-family: Times New Roman;
+            font-size: 4.5vw;
+            font-weight: 700;
+        }
+        p{
+            height: 46px;
+            width: 300px;
+            flex-shrink: 0;
+            color: #7B7B7B;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        button{
+            border-radius: 4px;
+            background: rgba(255, 92, 0, 0.74);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            padding: 7px 20px;
+            width: fit-content;
+            color: rgba(255, 255, 255, 0.74);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            align-items: center;
+        }
+    }
+}
+.container_2{
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%; 
+    img{
+        width: 50%;
+        height: auto;
+        z-index: 5;
+    }
+    .bg_flou{
+        background: rgba(255, 255, 255, 0.85);
+        position :absolute; 
+        width: 100%;
+        height: 100%;
+        z-index: 8;
+    }
+    .content{
+        width: 60%;
+        height: auto;
+        padding: 20px;
+        strong{
+            // height: 184px;
+            // line-height: 1.5;
+            color: #000;
+            font-family: Times New Roman;
+            font-size: 3.8vw;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        span{
+            color: #FF5C00;
+            font-family: 'Jacques Francois';
+            font-size: 1.8vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 25px;
+        }
+        p{
+            flex-shrink: 0;
+            color: #7B7B7B;
+            font-size: 1.2vw;
+            font-weight: 500;
+        }
+    }
+}

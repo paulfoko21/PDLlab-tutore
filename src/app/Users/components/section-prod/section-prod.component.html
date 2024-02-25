@@ -1,0 +1,17 @@
+<div class="bg-white p-[15px] flex justify-center items-center">
+  <mat-tab-group mat-stretch-tabs="false" class="w-[90%] m-auto" [selectedIndex]="1" mat-align-tabs="center">
+    <mat-tab label="Les plus regarder">Content 1</mat-tab>
+    <mat-tab label="Les plus populaire">
+      <div class="liste ">
+        <div class="liste-item" *ngFor="let livre of Livres">
+            <app-card-livre
+              [titre]="livre.titre"
+              [auteur]="livre.auteur"
+              [imageSrc]="livre.imageSrc"
+            ></app-card-livre>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Third">Content 3</mat-tab>
+  </mat-tab-group>
+</div>

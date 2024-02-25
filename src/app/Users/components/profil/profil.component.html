@@ -1,0 +1,36 @@
+<div class="w-[22vw] absolute top-12 z-[10000000000000000] right-10">
+    <div class="bg-white shadow-md rounded-lg">
+        <div class="photo-wrapper h-[10vh] p-2 relative">
+            <div class="absolute top-0 left-0 w-full z-0 h-[50px]" [ngStyle]="{'background-color': couleurAleatoire}"></div>
+            <div>
+                <span [ngStyle]="{'background-color': couleurAleatoire}" class="w-8 h-8 mr-2 rounded-full shadow-md mx-auto cursor-pointer">
+                    <img *ngIf="user.image" class="w-8 h-8 mr-2 rounded-full mx-auto" [src]="user.image"> 
+                    <span class="w-8 h-8 mr-2 rounded-full mx-auto text-white flex items-center justify-center text-[1.4vw] font-medium" *ngIf="!user.image">{{nom.charAt(0)}}{{prenon.charAt(0)}}</span>
+                </span>
+                <span class="material-symbols-outlined absolute bottom-2 right-12 hover:text-gray-600 hover:cursor-pointer">
+                    edit_square
+                </span>
+            </div>
+        </div>
+        <div class="p-2">
+            <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{{name}}</h3>
+            <div class="text-center text-[#FF5C00] text-xs font-semibold">
+                <p>{{email}}</p>
+            </div>
+            <table class="text-xs my-3">
+                <tbody><tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Nom</td>
+                    <td class="px-2 py-2">{{nom}}</td>
+                </tr>
+                <tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Prenom</td>
+                    <td class="px-2 py-2">{{prenon}}</td>
+                </tr>
+                <tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
+                    <td class="px-2 py-2">{{user.email}}</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>

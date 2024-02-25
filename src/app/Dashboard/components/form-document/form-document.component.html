@@ -1,0 +1,126 @@
+<div (click)="annuler()" *ngIf="isCardVisible" class="background-overlay">
+</div>
+<div *ngIf="isCardVisible" class="content ">
+    <div *ngIf="loading" class="w-[100%] top-0 left-0 h-[100%] absolute z-[1000] flex justify-center items-center p-0 m-0">    
+        <div
+            class="inline-block h-8 w-8 animate-spin rounded-full !border-y-[#FF5C00] !border-l-[#FF5C00] border-4 border-solid border-current border-r-transparent align-[-0.125em] text-warning motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status">
+            <span
+                class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...
+            </span>
+        </div>
+    </div>
+    <mat-stepper class="bg-none pt-4 px-5 rounded w-full absolute h-full" [linear]=true #stepper>
+        <mat-step [stepControl]="firstFormGroup" label="Generalite">
+            <form [formGroup]="firstFormGroup" class="w-full h-full p-3 pt-10">
+                <div class="flex gap-2">
+                    <mat-form-field>
+                        <mat-label>Titre</mat-label>
+                        <input matInput placeholder="Titre" formControlName="nom" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Auteur</mat-label>
+                        <input matInput placeholder="Auteur" formControlName="auteur" required>
+                    </mat-form-field>
+                </div>
+                <div class="flex gap-2">
+                    <mat-form-field>
+                        <mat-label>Type</mat-label>
+                        <mat-select [(value)]="selecType" (selectionChange)="updateSelectedFileType()">
+                            @for (type of types; track type) {
+                                <mat-option [value]="type.value">{{type.value}}</mat-option>
+                            }
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Categories</mat-label>
+                        <mat-select [(value)]="selectCategorie" (selectionChange)="updateSelectedcategorie()">
+                        @for (categorie of categories; track categorie) {
+                            <mat-option [value]="categorie.nom">{{categorie.nom}}</mat-option>
+                        }
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="w-full min-h-[15vh]">
+                    <mat-label>Description</mat-label>
+                    <textarea class="min-h-[15vh] w-full" formControlName="description" matInput placeholder="Ex. Livre sur le develppemen personel..."></textarea>
+                </mat-form-field>
+                <button mat-raised-button matStepperNext class="!font-sans !text-[14px] !bg-green-500">Continuer</button>
+                
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Infos documents"  *ngIf="selecType === 'Documents'">
+            <form [formGroup]="secondFormGroup" class="w-full h-full p-3 pt-10">
+                <div class="flex gap-2">
+                    <mat-form-field>
+                        <mat-label>Nature</mat-label>
+                        <mat-select [(value)]="selecNature">
+                            <mat-option value="Physique_Numerique">Physique et Numerique</mat-option>
+                            <mat-option value="Physique">Physique</mat-option>
+                            <mat-option value="Numerique">Numerique</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Disponible en vente</mat-label>
+                        <mat-select [(value)]="selecDispo">
+                          <mat-option value="true">Oui</mat-option>
+                          <mat-option value="false">Non</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <mat-form-field floatLabel="always" *ngIf="selecDispo === 'true'">
+                    <mat-label>prix de vente</mat-label>
+                    <input matInput type="number" class="text-right" formControlName="prixUnitaire" placeholder="0">
+                    <span matTextPrefix>$&nbsp;</span>
+                    <span matTextSuffix>.00 fcfa</span>
+                </mat-form-field>
+                <fieldset class="border border-dashed gap-7 rounded-md p-4 items-center flex justify-between w-full min-h-[100px]">
+                    <legend>Couverture du document</legend>
+                    <span class="flex flex-col gap-3">
+                        <label for="uploadimage"
+                            class="bg-gray-800 hover:bg-gray-700 text-white text-sm px-4 py-2.5 outline-none rounded w-fit h-fit cursor-pointer mx-auto block font-[sans-serif]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 mr-2 fill-white inline" viewBox="0 0 32 32">
+                                <path
+                                d="M23.75 11.044a7.99 7.99 0 0 0-15.5-.009A8 8 0 0 0 9 27h3a1 1 0 0 0 0-2H9a6 6 0 0 1-.035-12 1.038 1.038 0 0 0 1.1-.854 5.991 5.991 0 0 1 11.862 0A1.08 1.08 0 0 0 23 13a6 6 0 0 1 0 12h-3a1 1 0 0 0 0 2h3a8 8 0 0 0 .75-15.956z"
+                                data-original="#000000" />
+                                <path
+                                d="M20.293 19.707a1 1 0 0 0 1.414-1.414l-5-5a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 1.414 1.414L15 16.414V29a1 1 0 0 0 2 0V16.414z"
+                                data-original="#000000" />
+                            </svg>
+                            Upload
+                            <input type="file" id='uploadimage' (change)="imageSelected($event)" class="hidden" />
+                        </label>
+                        <p class="text-xs text-gray-400 mt-2">Only an image (PNG, JPEG, JPG ...) are Allowed.</p>
+                    </span>
+                    <div *ngIf="previewImage">
+                        <img [src]="previewImage" alt="Aperçu de l'image" class="w-[10vw]" />
+                    </div>
+                </fieldset>
+                    <button mat-raised-button matStepperNext class="!bg-green-500 !font-sans !text-[14px] !mb-3">Continuer</button>
+                    <button mat-raised-button matStepperPrevious>retour</button>
+            </form>
+        </mat-step>
+        <mat-step label="Finalisation">
+            <span *ngIf="selecNature =='Physique'" class="w=full text-red-500 text-[14px] items-center text-center font-semibold"> vous ne pouvez selectionner<br> de fichier pour les document uniquement physique!</span>
+            <label for="uploadFile" class="bg-white mt-3 text-black text-base rounded w-80 h-52 flex flex-col items-center justify-center cursor-pointer border-2 border-gray-300 border-dashed mx-auto font-[sans-serif]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 mb-2 fill-black" viewBox="0 0 32 32">
+                    <path
+                    d="M23.75 11.044a7.99 7.99 0 0 0-15.5-.009A8 8 0 0 0 9 27h3a1 1 0 0 0 0-2H9a6 6 0 0 1-.035-12 1.038 1.038 0 0 0 1.1-.854 5.991 5.991 0 0 1 11.862 0A1.08 1.08 0 0 0 23 13a6 6 0 0 1 0 12h-3a1 1 0 0 0 0 2h3a8 8 0 0 0 .75-15.956z"
+                    data-original="#000000" />
+                    <path
+                    d="M20.293 19.707a1 1 0 0 0 1.414-1.414l-5-5a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 1.414 1.414L15 16.414V29a1 1 0 0 0 2 0V16.414z"
+                    data-original="#000000" />
+                </svg>
+                Upload {{selecType}}
+                <input type="file" id="uploadFile" class="hidden" *ngIf="selecNature !=='Physique'" #fileInput (change)="onFileSelected($event)"/>
+                <p class="text-xs text-gray-400 mt-2">{{selectedFileType}} are Allowed.</p>
+            </label>
+            <span>{{ selectedFileName }}</span>
+            <div class="flex items-center justify-center gap-4 pt-5">
+                <button mat-raised-button (click)="stepper.reset()" (click)="annuler()">annuler</button>
+                <button mat-raised-button (click)="register()" class="!text-white !items-center !font-medium !bg-green-500 p-2 !shadow">Enregistrer</button>
+            </div>
+        </mat-step>
+    </mat-stepper>
+</div>

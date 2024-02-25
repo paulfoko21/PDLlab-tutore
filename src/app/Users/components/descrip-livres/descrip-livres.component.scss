@@ -1,0 +1,14 @@
+.liste {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .liste-item {
+    flex: 1 0 auto; // Utilisez flex-grow: 1 pour permettre l'extension des éléments
+    margin: 10px;
+    box-sizing: border-box; // Inclure la bordure et la marge dans la largeur calculée
+    max-width: 18%;
+  }

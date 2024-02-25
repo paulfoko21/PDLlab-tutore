@@ -1,0 +1,119 @@
+<nav class="bg-[#ffffff] z-[9] fixed shadow-lg h-screen w-[270px] py-6 px-4 font-[sans-serif] overflow-auto">
+  <a href="#"><img src="assets/images/PDLlab.png" alt="PDLlab_logo" class='w-[60%]' />
+  </a>
+  <ul class="mt-4">
+    <li>
+      <a href="javascript:void(0)" [class.active-link]="isActive('/admin')" routerLink="/admin"
+        class="text-gray-600 hover:text-black transition-all text-sm flex items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
+          viewBox="0 0 512 512">
+          <path
+            d="M197.332 170.668h-160C16.746 170.668 0 153.922 0 133.332v-96C0 16.746 16.746 0 37.332 0h160c20.59 0 37.336 16.746 37.336 37.332v96c0 20.59-16.746 37.336-37.336 37.336zM37.332 32A5.336 5.336 0 0 0 32 37.332v96a5.337 5.337 0 0 0 5.332 5.336h160a5.338 5.338 0 0 0 5.336-5.336v-96A5.337 5.337 0 0 0 197.332 32zm160 480h-160C16.746 512 0 495.254 0 474.668v-224c0-20.59 16.746-37.336 37.332-37.336h160c20.59 0 37.336 16.746 37.336 37.336v224c0 20.586-16.746 37.332-37.336 37.332zm-160-266.668A5.337 5.337 0 0 0 32 250.668v224A5.336 5.336 0 0 0 37.332 480h160a5.337 5.337 0 0 0 5.336-5.332v-224a5.338 5.338 0 0 0-5.336-5.336zM474.668 512h-160c-20.59 0-37.336-16.746-37.336-37.332v-96c0-20.59 16.746-37.336 37.336-37.336h160c20.586 0 37.332 16.746 37.332 37.336v96C512 495.254 495.254 512 474.668 512zm-160-138.668a5.338 5.338 0 0 0-5.336 5.336v96a5.337 5.337 0 0 0 5.336 5.332h160a5.336 5.336 0 0 0 5.332-5.332v-96a5.337 5.337 0 0 0-5.332-5.336zm160-74.664h-160c-20.59 0-37.336-16.746-37.336-37.336v-224C277.332 16.746 294.078 0 314.668 0h160C495.254 0 512 16.746 512 37.332v224c0 20.59-16.746 37.336-37.332 37.336zM314.668 32a5.337 5.337 0 0 0-5.336 5.332v224a5.338 5.338 0 0 0 5.336 5.336h160a5.337 5.337 0 0 0 5.332-5.336v-224A5.336 5.336 0 0 0 474.668 32zm0 0"
+            data-original="#000000" />
+        </svg>
+        <span>Dashboard</span>
+      </a>
+    </li>
+  </ul>
+  <div class="mt-6">
+    <div class="flex cursor-pointer group" (click)="togglemenu(1)">
+      <span class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Informations</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black"  [ngClass]="menuvisible == 1 ? '' : '-rotate-90'" viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+    <ul class="space-y-1 mt-2 pl-4" [ngClass]="menuvisible == 1 ? '' : 'hidden'">
+      <li>
+        <a href="javascript:void(0)"  [class.active-link]="isActive('/admin/infos/Documents')" routerLink="/admin/infos/Documents"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">book_2</span>
+          <span>Documents</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" [class.active-link]="isActive('/admin/infos/Emprunts')" routerLink="/admin/infos/Emprunts"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">running_with_errors</span>
+          <span>Emprunts</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" [class.active-link]="isActive('/admin/infos/Ventes')" routerLink="/admin/infos/Ventes"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">storefront</span>
+          <span>Ventes</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" [class.active-link]="isActive('/admin/infos/Dons')" routerLink="/admin/infos/Dons"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">payments</span>
+          <span>Dons</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="mt-6">
+    <div class="flex cursor-pointer group" (click)="togglemenu(2)">
+      <span class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">gestions</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black" [ngClass]="menuvisible == 2 ? '' : '-rotate-90'"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+    <ul class="space-y-1 mt-2 pl-4" [ngClass]="menuvisible == 2 ? '' : 'hidden'">
+      <li>
+        <a href="javascript:void(0)"  [class.active-link]="isActive('/admin/ges/utilisateurs')" routerLink="/admin/ges/utilisateurs"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">manage_accounts</span>
+          <span>Utilisateurs</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)"  [class.active-link]="isActive('/admin/ges/Documents')" routerLink="/admin/ges/Documents"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">book_2</span>
+          <span>Documents</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)"  [class.active-link]="isActive('/admin/ges/Dons')" routerLink="/admin/ges/Dons"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">payments</span>
+          <span>Dons</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="mt-6">
+    <div class="flex cursor-pointer group" (click)="togglemenu(3)">
+      <span class="text-gray-600 group-hover:text-black text-sm font-bold px-4 flex-1">Actions</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-600 group-hover:fill-black " [ngClass]="menuvisible == 3 ? '' : '-rotate-90'"
+        viewBox="0 0 451.847 451.847">
+        <path
+          d="M225.923 354.706c-8.098 0-16.195-3.092-22.369-9.263L9.27 151.157c-12.359-12.359-12.359-32.397 0-44.751 12.354-12.354 32.388-12.354 44.748 0l171.905 171.915 171.906-171.909c12.359-12.354 32.391-12.354 44.744 0 12.365 12.354 12.365 32.392 0 44.751L248.292 345.449c-6.177 6.172-14.274 9.257-22.369 9.257z"
+          data-original="#000000" />
+      </svg>
+    </div>
+    <ul class="space-y-1 mt-2 pl-4 " [ngClass]="menuvisible == 3 ? '' : 'hidden'">
+      <li>
+        <a href="javascript:void(0)"
+          class="text-gray-600 hover:text-black transition-all text-sm flex gap-2 items-center hover:bg-[#efefef] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">account_circle</span>
+          <span>Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0)"
+          class="text-red-600 hover:text-red transition-all text-sm flex gap-2 items-center hover:bg-[#ff777791] rounded-md px-4 py-3">
+          <span class="material-symbols-outlined">power_settings_new</span>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

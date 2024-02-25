@@ -1,0 +1,299 @@
+<div class="w-full items-center justify-center flex flex-col relative">
+    <span class="flex justify-center items-center mt-3 mb-8 text-center w-full relative"> 
+        <p class="font-bold text-center text-[2vw]">Listes des Documents</p> 
+        <button (click)="opencard()" class="text-center z-20 absolute right-2 text-white flex items-center font-medium bg-green-500 p-2 rounded shadow"><span class="material-symbols-outlined">add</span>Ajouter Document</button>
+    </span>
+    <div>
+        <mat-tab-group mat-stretch-tabs="false" class="w-full m-auto" [selectedIndex]="0" mat-align-tabs="center">
+            <mat-tab label="Livres">
+                <div class="relative w-full mt-3 overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Couverture
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Titre
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Auteur
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Genre
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Disponible
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Price
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre2.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Dokkodo
+                                </th>
+                                <td class="px-6 py-4">
+                                    Miyato musashi
+                                </td>
+                                <td class="px-6 py-4">
+                                    Laptop
+                                </td>
+                                <td class="px-6 py-4">
+                                    Oui
+                                </td>
+                                <td class="px-6 py-4">
+                                    $2999
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre3.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    L'art de la guerre
+                                </th>
+                                <td class="px-6 py-4">
+                                    Sun Zu
+                                </td>
+                                <td class="px-6 py-4">
+                                    Traité, Non-fiction
+                                </td>
+                                <td class="px-6 py-4">
+                                    Oui
+                                </td>
+                                <td class="px-6 py-4">
+                                    $1999
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre1.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Magic Mouse 2
+                                </th>
+                                <td class="px-6 py-4">
+                                    Black
+                                </td>
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $99
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre3.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Apple Watch
+                                </th>
+                                <td class="px-6 py-4">
+                                    Black
+                                </td>
+                                <td class="px-6 py-4">
+                                    Watches
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $199
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre2.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Apple iMac
+                                </th>
+                                <td class="px-6 py-4">
+                                    Silver
+                                </td>
+                                <td class="px-6 py-4">
+                                    PC
+                                </td>
+                                <td class="px-6 py-4">
+                                    Oui
+                                </td>
+                                <td class="px-6 py-4">
+                                    $2999
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre3.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Apple AirPods
+                                </th>
+                                <td class="px-6 py-4">
+                                    White
+                                </td>
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $399
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre1.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    iPad Pro
+                                </th>
+                                <td class="px-6 py-4">
+                                    Gold
+                                </td>
+                                <td class="px-6 py-4">
+                                    Tablet
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $699
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre2.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Magic Keyboard
+                                </th>
+                                <td class="px-6 py-4">
+                                    Black
+                                </td>
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    Oui
+                                </td>
+                                <td class="px-6 py-4">
+                                    $99
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre1.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Apple TV 4K
+                                </th>
+                                <td class="px-6 py-4">
+                                    Black
+                                </td>
+                                <td class="px-6 py-4">
+                                    TV
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $179
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="p-4">
+                                    <img src="/assets/images/livres/livre3.png" class="w-[3vw] md:w-[4vw] max-w-full max-h-full" alt="Apple Watch">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    AirTag
+                                </th>
+                                <td class="px-6 py-4">
+                                    Silver
+                                </td>
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    Non
+                                </td>
+                                <td class="px-6 py-4">
+                                    $29
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><span class="material-symbols-outlined">edit_square</span></a>
+                                    <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"><span class="material-symbols-outlined">delete</span></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-tab>
+            <mat-tab label="Audios">
+                <div class="w-full mt-3">
+                    listes......
+                </div>
+            </mat-tab>
+            <mat-tab label="Videos">
+                <div class="w-full mt-3">
+                  listes......Liste des video
+                </div>
+            </mat-tab>
+            <mat-tab label="Autres">
+                <div class="w-full mt-3">
+                  listes......Listes des autres categories de documents
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<app-form-document [isCardVisible]="handleform"></app-form-document>

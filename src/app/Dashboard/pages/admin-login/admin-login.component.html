@@ -1,0 +1,43 @@
+<div *ngIf="isCardVisible" class="background-overlay" ></div>
+
+<div *ngIf="isCardVisible" class="content">
+    <div class="header">
+        <img class="h-[60px] w-[146px]" src="assets/images/PDLlab.png" alt="PDLlab_logo">
+        <h1>Administration Login</h1>
+        <div class="socialmedia">
+            <div><img src="assets/images/google.png" alt="google_logo"></div>
+            <div><img src="assets/images/facebook.png" alt="facebook_logo"></div>
+        </div>
+        <div>
+            <hr>
+            <p> OR </p>
+            <hr>
+        </div>
+    </div>
+    <form >
+        <div class="form">
+            <mat-form-field>
+                <mat-label>adresse mail</mat-label>
+                <input matInput placeholder="mail@example.com" [formControl]="email" required>
+                @if (email.invalid) {
+                    <mat-error>{{getErrorMessage()}}</mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>mot de passe</mat-label>
+                <input matInput required [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a href="#">mot de passe oublier ?</a>
+        </div>
+        <button mat-raised-button type="submit">Connexion</button>
+    </form>
+    <div class="flex align-center text-center text-[15px]" style="font-family: 'Times New Roman', serif;">
+        <p>
+            pour avoir access a l'interface d'administration,<br> bien vouloir remplir les champs 
+            <strong class="link-color">ci dessus.</strong>
+        </p>
+    </div>
+</div>

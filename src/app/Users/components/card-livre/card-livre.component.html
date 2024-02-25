@@ -1,0 +1,23 @@
+<div (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" class="card-container">
+  <div class="card-content flex flex-col text-center justify-center items-center">
+    <img [src]="imageSrc" alt="Image du livre" class="card-image" />
+
+    <div class="card-details">
+      <p class="card-author">{{ auteur }}</p>
+      <h3 class="card-title">{{ titre }}</h3>
+    </div>
+
+    
+  </div>
+  <div class="card-buttons-container" *ngIf="isHovered">
+    <div class="round-button" (click)="view()">
+      <span class="material-symbols-outlined text-[25px]">visibility</span>
+    </div>
+    <div class="round-button">
+      <span class="material-symbols-outlined text-[25px]">share</span>
+    </div>
+    <div class="round-button">
+      <span class="material-symbols-outlined text-[25px]">shopping_cart</span>
+    </div>
+  </div>
+</div>

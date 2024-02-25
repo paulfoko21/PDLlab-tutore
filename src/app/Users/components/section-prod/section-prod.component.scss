@@ -1,0 +1,27 @@
+.liste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.liste-item {
+  flex: 1 0 auto; // Utilisez flex-grow: 1 pour permettre l'extension des éléments
+  margin: 10px;
+  box-sizing: border-box; // Inclure la bordure et la marge dans la largeur calculée
+  max-width: 18%;
+}
+
+.mat-mdc-tab-labels {
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+// Styles pour le responsive
+@media screen and (max-width: 768px) {
+  .liste-item {
+    flex: 0 0 calc(50% - 10px);
+  }
+}

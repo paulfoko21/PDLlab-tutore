@@ -1,0 +1,34 @@
+.contenair{
+    div{
+        align-items: center;
+        width: 30%;
+        p{
+            color: #7C7C7C;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            span{
+                margin-left: 10px;
+                color: #000;
+            }
+        }
+    }
+}
+
+ul{
+    font-size: 15px;
+    font-weight: 400;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+
+    li:hover{
+        cursor: pointer;
+    }
+}
+.active-link{
+    color: #FF5C00;
+}
